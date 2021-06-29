@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -21,6 +22,12 @@ public class MenuController {
     public ResponseEntity<Optional<Menu>> getMenuById(@PathVariable("id") Long id){
         Optional<Menu> menu = menuService.findById(id);
         return new ResponseEntity<>(menu, HttpStatus.OK);
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<List<Menu>> getAllMenu(){
+        List<Menu> menus = menuService.findAll();
+        return new ResponseEntity<>(menus, HttpStatus.OK);
     }
 
 }
