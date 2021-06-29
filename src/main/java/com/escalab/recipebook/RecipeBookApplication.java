@@ -8,7 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-//@ComponentScan(basePackageClasses= MenuController.class)
 public class RecipeBookApplication {
 
     public static void main(String[] args) {
